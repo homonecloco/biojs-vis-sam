@@ -1,0 +1,147 @@
+.bam_base {
+   float: left !important;
+   height:100%;
+   text-align: center;
+  vertical-align: middle;
+
+}
+
+.bam_base_A {
+   background-color:#FFFF66 ;
+   height:100%;
+}
+
+
+.bam_base_C {
+   background-color:#47D147;
+   color: black;
+   height:100%;
+}
+
+.bam_base_G {
+   background-color:#3399FF;
+   color: black;
+   height:100%;
+}
+
+.bam_base_T {
+   background-color:#FF704D;
+   color: black;
+   height:100%;
+}
+
+.bam_base_N {
+   background-color:black;
+   color: white;
+   height:100%;
+   text-align: center;
+  vertical-align: middle;
+}
+
+.bam_base_I{
+   box-sizing:border-box;
+   -moz-box-sizing:border-box;
+   -webkit-box-sizing:border-box;
+   border-style:solid;
+   border-color:red;
+   border-width: 1px;
+
+}
+
+.bam_tag{
+  text-align: center;
+  vertical-align: middle;
+}
+
+.bam_base_D{
+   background-color:white;
+   color: black;
+}
+
+.bam_duplicate{
+  text-decoration:line-through;
+}
+.bam_forward {
+   text-transform:uppercase;
+   background-color: green;
+}
+.bam_reverse {
+   text-transform:lowercase;
+   background-color: blue;
+}
+
+.bam_mate_missing{
+  barder-style:solid;
+  border-color: red;
+  border-width: 2px;
+}
+
+.bam_second{
+   border-style:solid;
+   border-color:black;
+   border-width: 1px;
+   background-color: red;
+}
+.bam_first {
+   border-style:dashed;
+   border-color:black;
+   border-width: 1px;
+   background-color: gray;
+}
+
+.bam_base {
+   float: left !important;
+ }
+
+ .bam_forward {
+   text-transform:uppercase;
+   text-align:center;
+   
+ }
+ .bam_reverse {
+   text-transform:lowercase;
+   text-align:center;
+ }
+
+.bam_info_panel{
+  background-color: black;
+  color: white;
+}
+
+.bam_selector_text{
+  border:0; 
+  color:#f6931f; 
+  font-weight:bold;
+}
+
+.bam_loading{
+    filter:alpha(opacity=50); 
+    opacity:0.5;
+}
+
+.bam_container{
+  box-sizing:border-box;
+  border-style:solid;
+  border-color:black;
+  border-width: 1px;
+  -moz-user-select:'none';
+   -webkit-user-select:'none';
+   user-select:'none'
+
+}
+
+.bam_settings_button {
+    z-index: 1;
+    position: relative;
+    left: 2px;
+    right: 0;
+    top: 2px;
+
+    height: 16px;
+    width: 16px;
+    background-color: #fff;
+    color: white;
+    background-image:url('images/settings.png');
+
+    padding: 0;
+}

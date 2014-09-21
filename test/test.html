@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+
+	<link rel="stylesheet"  charset="utf-8" type="text/css" href="../css/BAMViewer.css"> </link>
+	<style type="text/css">
+	
+  </style>
+
+  <title>Test SAM</title>
+
+  <script language="JavaScript" type="text/javascript" src="../build/biojs-vis-sam.js"></script>
+
+  <script language="JavaScript" type="text/javascript">
+
+
+
+  window.onload = function() {
+
+   var bw = 2;
+   var flanking_cache = 50;
+
+   var instance = new  biojsvissam.BAMViewer({
+    target : "bam_viewer_1",
+    selectionBackgroundColor : '#99FF00',
+     			//dataSet: "http://localhost:4567/test_chr.fasta/testu/alignment", 
+     			//reference: "http://localhost:4567/test_chr.fasta/testu/reference",
+     			//dataSet:"http://localhost:4567/test_chr.fasta/testu/alignment?region=chr_1:1-100", 
+          dataSet:"test.sam", 
+          reference:"http://localhost:4567/test_chr.fasta/testu/reference",
+          base_width: bw,
+     			flanking_cache: flanking_cache ,    			//bam: "http://localhost:4567/test_chr.fasta/testu/alignment",
+     			default_region: "chr_1:1-500",
+          height: "500px",
+          info_panel: "footer", 
+          display_orientation: true,
+          fontSize: "2px"
+        }); 
+   console.log(instance);
+   instance.load_default_region(); 
+ };
+
+ </script>
+
+</head>
+<body>
+
+  <div id="header" style="background-color:#FFA500;">
+    <h1 style="margin-bottom:0;">BioJS SAMViewer mini-test</h1>
+  </div>
+  
+  <div id="bam_viewer_1" style="background-color:#EEEEEE;width:100%;overflow:hidden; height:60%;float:right">
+    BAM goes here
+  </div>
+
+</div>
+
+</body>
+</html>
