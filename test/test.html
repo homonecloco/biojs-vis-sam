@@ -3,8 +3,10 @@
 <head>
 
 	<link rel="stylesheet"  charset="utf-8" type="text/css" href="../css/BAMViewer.css"> </link>
+  <link rel="stylesheet" href="../css/jquery-ui-1.10.4.custom.min.css" />
+<link rel="stylesheet" href="../css/jquery.tooltip.css">
 	<style type="text/css">
-	
+
   </style>
 
   <title>Test SAM</title>
@@ -17,7 +19,7 @@
 
   window.onload = function() {
 
-   var bw = 2;
+   var bw = 10;
    var flanking_cache = 50;
 
    var instance = new  biojsvissam.BAMViewer({
@@ -32,12 +34,29 @@
      			flanking_cache: flanking_cache ,    			//bam: "http://localhost:4567/test_chr.fasta/testu/alignment",
      			default_region: "chr_1:1-500",
           height: "500px",
+          //width:"1000px",
           info_panel: "footer", 
-          display_orientation: true,
-          fontSize: "2px"
+          display_orientation: true
+          //fontSize: "2px"
         }); 
    console.log(instance);
    instance.load_default_region(); 
+
+   var region_list = new biojsvissam.BAMRegionList({
+   target : "bam_list",
+   selectionBackgroundColor : 'gray',
+   base_width: bw,
+          //reference: "http://localhost:4567/test_chr.fasta/testu/reference",
+          //dataSet: "http://localhost:4567/test_chr.fasta/testu/list" //This will be optional in the future.  
+          //reference:"http://localhost:4567/reference.fa/Sample_LIB1718.uniq/reference",
+          dataSet:"http://localhost:4567/miniref.fa/LIB1718/list"
+        });  
+
+   /*var region_selector = new Biojs.BAMRegionSelector({
+     target :"selected_region", 
+  });*/
+
+
  };
 
  </script>
@@ -48,8 +67,10 @@
   <div id="header" style="background-color:#FFA500;">
     <h1 style="margin-bottom:0;">BioJS SAMViewer mini-test</h1>
   </div>
-  
-  <div id="bam_viewer_1" style="background-color:#EEEEEE;width:100%;overflow:hidden; height:60%;float:right">
+  <div id="bam_list" style="background-color:#FFD700;height:600px;width:20%;float:left;">
+          HERE GOES THE LIST</div> 
+
+  <div id="bam_viewer_1" style="background-color:#EEEEEE;width:80%;overflow:hidden; height:60%;float:right">
     BAM goes here
   </div>
 
