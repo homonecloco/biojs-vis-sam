@@ -37,7 +37,7 @@
           //width:"1000px",
           info_panel: "footer", 
           display_orientation: true
-          //fontSize: "2px"
+
         }); 
    console.log(instance);
    instance.load_default_region(); 
@@ -59,9 +59,13 @@
 var region_selector = new biojsvissam.BAMRegionSelector({
   target :"selected_region", 
  });
+  //Registering for the event queues.  
+  region_selector.add_center_callback(instance);
  };
+ //region_list.add_region_callback(instance);
 
- 
+
+
 // console.log(region_selector);
 
  </script>
