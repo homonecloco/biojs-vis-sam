@@ -25,11 +25,8 @@
    var instance = new  biojsvissam.BAMViewer({
     target : "bam_viewer_1",
     selectionBackgroundColor : '#99FF00',
-     			//dataSet: "http://localhost:4567/test_chr.fasta/testu/alignment", 
-     			//reference: "http://localhost:4567/test_chr.fasta/testu/reference",
-     			//dataSet:"http://localhost:4567/test_chr.fasta/testu/alignment?region=chr_1:1-100", 
-          dataSet:"test.sam", 
-          reference:"http://localhost:4567/test_chr.fasta/testu/reference",
+          dataSet:"minitest.sam", 
+//          reference:"http://localhost:4567/test_chr.fasta/testu/reference",
           base_width: bw,
      			flanking_cache: flanking_cache ,    			//bam: "http://localhost:4567/test_chr.fasta/testu/alignment",
      			default_region: "chr_1:1-500",
@@ -46,10 +43,7 @@
    target : "bam_list",
    selectionBackgroundColor : 'gray',
    base_width: bw,
-          //reference: "http://localhost:4567/test_chr.fasta/testu/reference",
-          //dataSet: "http://localhost:4567/test_chr.fasta/testu/list" //This will be optional in the future.  
-          reference:"http://localhost:4567/miniref.fa/LIB1718/reference",
-          dataSet:"http://localhost:4567/miniref.fa/LIB1718/list"
+          dataSet:"list"
         });  
 
    /*var region_selector = new Biojs.BAMRegionSelector({
@@ -61,7 +55,22 @@ var region_selector = new biojsvissam.BAMRegionSelector({
  });
   //Registering for the event queues.  
   region_selector.add_center_callback(instance);
+  region_selector.setRegion("gnl|UG|Ta#S58863387:1-404");
+
+
+    region_list.add_region_callback(instance);
+    region_list.add_region_callback(region_selector);
+
+    //connecting the slider with the VIEWER
+    instance.add_selected_change_callback(region_selector);
+    
+    // instance3.add_selected_change_callback(region_selector);
+
+    region_selector.add_center_callback(instance);
+    
  };
+
+
  //region_list.add_region_callback(instance);
 
 
