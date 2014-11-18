@@ -29,7 +29,7 @@
     "watch": "mkdirp build; watchify browser.js -o build/biojs-vis-sam.js"
   },
   "dependencies": {
-    "biojs-alg-seqregion": "^0.1.0",
+    "biojs-alg-seqregion": "^0.1.1",
     "biojs-events": "0.0.4",
     "biojs-io-sam": "^0.1.0",
     "jquery": "^2.1.1",
@@ -54,9 +54,9 @@
   },
   "keywords": [
     "biojs",
-    " sam",
-    " bam",
-    " visualisation",
-    " bioinformatics"
+    "sam",
+    "bam",
+    "visualisation",
+    "bioinformatics"
   ]
 }

@@ -10,24 +10,34 @@ Install the module with: `npm install biojs-vis-sam`
 
 ```javascript
 var biojsvissam = require('biojs-vis-sam');
-biojsvissam.hello("biojs"); // "hello biojs"
+T
 ```
 
 ## Documentation
 
-#### .hello(name)
+There are three classes in the biojs-vis-sam package. 
 
-**Parameter**: `name`
-**Type**: `String`
-**Example**: `biojs`
 
-The 'hello' method is responsible for showing a name.
 
-How to use this method
+#### .set_size(size)
+
+**Parameter**: `size`
+**Type**: `int`
+**Example**: `instance.set_size(15)`
+
+Changes the size of the viewer
 
 ```javascript
-biojsvissam.hello('biojs'); // "hello biojs"
+biojsvissam.set_size(15); //Sets the font size to 15
 ```
+
+### Events supported
+
+To programatically controll th
+
+### Triggered events
+
+The events that 
 
 ## Contributing
 
