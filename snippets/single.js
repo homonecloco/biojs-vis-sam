@@ -1,9 +1,9 @@
 
-//var biojsvissam = require("biojs-vis-sam");
+var sam = require("biojs-vis-sam");
 var bw = 10;
 var flanking_cache = 50;
 
-var instance = new  biojsvissam.BAMViewer({
+var instance = new sam.BAMViewer({
   target : "bam_viewer_1",
   selectionBackgroundColor : '#99FF00',
   dataSet:"./data/minitest.sam", 
@@ -17,7 +17,7 @@ var instance = new  biojsvissam.BAMViewer({
 console.log(instance);
 instance.load_default_region(); 
 
-var region_selector = new biojsvissam.BAMRegionSelector({
+var region_selector = new sam.BAMRegionSelector({
   target :"selected_region", 
  });
 
