@@ -58,5 +58,13 @@
     "bam",
     "visualisation",
     "bioinformatics"
-  ]
+  ],
+  "sniper": {
+    "js": ["/build/biojs-vis-sam.js"],
+    "css": ["/css/BAMViewer.css",
+    "/css/jquery-ui-1.10.4.custom.min.css",
+    "/css/jquery.tooltip.css"],
+    "snippets": ["snippets"],
+    "first": "single"
+  }
 }
