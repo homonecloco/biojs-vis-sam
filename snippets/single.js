@@ -6,7 +6,7 @@ var flanking_cache = 50;
 var instance = new  biojsvissam.BAMViewer({
   target : "bam_viewer_1",
   selectionBackgroundColor : '#99FF00',
-  dataSet:"../test/minitest.sam", 
+  dataSet:"./data/minitest.sam", 
   base_width: bw,
   flanking_cache: flanking_cache ,
   default_region: "chr_1:1-404",
