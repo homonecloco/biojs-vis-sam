@@ -1,1 +1,0 @@
-biojsvissam = require('./index');
