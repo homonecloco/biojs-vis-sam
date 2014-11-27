@@ -25,7 +25,7 @@ There are three classes in the biojs-vis-sam package.
 **Type**: `int`
 **Example**: `instance.set_size(15)`
 
-Changes the size of the viewer
+Changes the size of the viewer. It also triggers 'onBaseSizeChanged'.
 
 ```javascript
 biojsvissam.set_size(15); //Sets the font size to 15

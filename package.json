@@ -72,6 +72,10 @@
     "snippets": [
       "snippets"
     ],
+    "exposed": [
+      "biojs-io-sam",
+      "nets"
+    ],
     "first": "single"
   }
 }

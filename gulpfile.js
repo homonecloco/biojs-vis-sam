@@ -1,8 +1,8 @@
 /*
  * biojs-vis-blast
- * https://github.com/xwatkins/biojs-vis-blast
+ * https://github.com/homonecloco/biojs-vis-sam
  *
- * Copyright (c) 2014 Xavier Watkins
+ * Copyright (c) 2014Ricardo H. Ramirez-Gonzalez 
  * Licensed under the Apache 2 license.
  */
 
@@ -122,6 +122,7 @@ function exposeBundles(b){
   if(packageConfig.sniper !== undefined && packageConfig.sniper.exposed !== undefined){
     for(var i=0; i<packageConfig.sniper.exposed.length; i++){
       b.require(packageConfig.sniper.exposed[i]);
+      write(i);
     }
   }
 }
