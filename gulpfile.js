@@ -122,7 +122,7 @@ function exposeBundles(b){
   if(packageConfig.sniper !== undefined && packageConfig.sniper.exposed !== undefined){
     for(var i=0; i<packageConfig.sniper.exposed.length; i++){
       b.require(packageConfig.sniper.exposed[i]);
-      write(i);
+      //write(i);
     }
   }
 }
