@@ -23,10 +23,10 @@
   "main": "lib/biojs-vis-sam",
   "scripts": {
     "test": "gulp test",
-    "build-browser": "mkdirp build; browserify browser.js -o build/biojs-vis-sam.js",
+    "build-browser": "gulp build-browser",
     "build-browser-min": "gulp build-browser-gzip",
     "prepublish": "gulp",
-    "watch": "mkdirp build; watchify browser.js -o build/biojs-vis-sam.js"
+    "watch": "gulp watch"
   },
   "dependencies": {
     "biojs-alg-seqregion": "^0.1.1",
