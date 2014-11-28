@@ -22,10 +22,10 @@
    var bw = 10;
    var flanking_cache = 50;
 
-   var instance = new  biojsvissam.BAMViewer({
+   var instance = new  sam.BAMViewer({
     target : "bam_viewer_1",
     selectionBackgroundColor : '#99FF00',
-          dataSet:"minitest.sam", 
+          dataSet:"data/minitest.txt", 
 //          reference:"http://localhost:4567/test_chr.fasta/testu/reference",
           base_width: bw,
      			flanking_cache: flanking_cache ,    			//bam: "http://localhost:4567/test_chr.fasta/testu/alignment",
@@ -39,7 +39,7 @@
    console.log(instance);
    instance.load_default_region(); 
 
-   var region_list = new biojsvissam.BAMRegionList({
+   var region_list = new sam.BAMRegionList({
    target : "bam_list",
    selectionBackgroundColor : 'gray',
    base_width: bw,
@@ -50,7 +50,7 @@
      target :"selected_region", 
   });*/
 
-var region_selector = new biojsvissam.BAMRegionSelector({
+var region_selector = new sam.BAMRegionSelector({
   target :"selected_region", 
  });
   //Registering for the event queues.  
