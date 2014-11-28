@@ -1,4 +1,3 @@
-
 var sam = require("biojs-vis-sam");
 var bw = 10;
 var flanking_cache = 50;
