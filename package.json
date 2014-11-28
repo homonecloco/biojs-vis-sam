@@ -78,6 +78,6 @@
       "biojs-io-sam",
       "nets"
     ],
-    "first": "single"
+    "first": "simple"
   }
 }
