@@ -1,7 +1,7 @@
 {
   "name": "biojs-vis-sam",
   "description": "Visualiser for the SAM format ",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "homepage": "https://github.com/homonecloco/biojs-vis-sam",
   "author": {
     "name": "Ricardo H. Ramirez-Gonzalez ",
