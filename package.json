@@ -31,9 +31,10 @@
   "dependencies": {
     "biojs-alg-seqregion": "^0.1.1",
     "biojs-events": "0.0.4",
-    "biojs-io-sam": "^0.1.0",
+    "biojs-io-sam": "^0.2.1",
     "jquery": "^2.1.1",
-    "jquery-ui": "^1.10.5"
+    "jquery-ui": "^1.10.5",
+    "chosen": "harvesthq/chosen"
   },
   "devDependencies": {
     "browserify": "^6.3.2",
