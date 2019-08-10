@@ -45,50 +45,22 @@ var del = require('del');
 var outputFileMin = join(buildDir,outputFile + ".min.js");
 var packageConfig = require('./package.json');
 
-// a failing test breaks the whole build chain
-gulp.task('build', ['build-browser', 'build-browser-gzip']);
-gulp.task('default', ['test',  'build']);
-
-
-
-
-
-
-gulp.task('test', ['test-unit']);
-
-
-gulp.task('test-unit', function () {
-    return gulp.src('./test/unit/**/*.js', {read: false})
-        .pipe(mocha({reporter: 'spec',
-                    useColors: true}));
-});
-
-
-
-gulp.task('test-watch', function() {
-   gulp.watch(['./src/**/*.js','./lib/**/*.js', './test/**/*.js'], function() {
-     gulp.run('test');
-   });
-});
-
-
-
-
-
 // will remove everything in build
 gulp.task('clean', function(cb) {
   del([buildDir], cb);
+  cb();
 });
 
 // just makes sure that the build dir exists
-gulp.task('init', ['clean'], function() {
+gulp.task('init', gulp.series(['clean']), function(done) {
   mkdirp(buildDir, function (err) {
     if (err) console.error(err)
   });
+  done();
 });
 
 // browserify debug
-gulp.task('build-browser',['init'], function() {
+gulp.task('build-browser', gulp.series('init'), function() {
   var b = browserify({debug: true,hasExports: true});
   exposeBundles(b);
   return b.bundle()
@@ -98,7 +70,7 @@ gulp.task('build-browser',['init'], function() {
 });
 
 // browserify min
-gulp.task('build-browser-min',['init'], function() {
+gulp.task('build-browser-min',gulp.series('init'), function() {
   var b = browserify({hasExports: true, standalone: "biojs-vis-blast"});
   exposeBundles(b);
   return b.bundle()
@@ -108,11 +80,30 @@ gulp.task('build-browser-min',['init'], function() {
     .pipe(gulp.dest(buildDir));
 });
  
-gulp.task('build-browser-gzip', ['build-browser-min'], function() {
+gulp.task('build-browser-gzip', gulp.series('build-browser-min'), function() {
   return gulp.src(outputFileMin)
     .pipe(gzip({append: false, gzipOptions: { level: 9 }}))
     .pipe(rename(outputFile + ".min.gz.js"))
     .pipe(gulp.dest(buildDir));
+});
+
+gulp.task('test-unit', function () {
+    return gulp.src('./test/unit/**/*.js', {read: false})
+        .pipe(mocha({reporter: 'spec',
+                    useColors: true}));
+});
+
+gulp.task('test', gulp.series(['test-unit']));
+// a failing test breaks the whole build chain
+//gulp.task('build', gulp.series('build-browser'));
+gulp.task('build', gulp.series(['build-browser', 'build-browser-gzip']));
+
+gulp.task('default', gulp.series(['test',  'build']));
+
+gulp.task('test-watch', function() {
+   gulp.watch(['./src/**/*.js','./lib/**/*.js', './test/**/*.js'], function() {
+     gulp.run('test');
+   });
 });
 
 // exposes the main package
