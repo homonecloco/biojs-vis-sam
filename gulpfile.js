@@ -47,20 +47,23 @@ var packageConfig = require('./package.json');
 
 // will remove everything in build
 gulp.task('clean', function(cb) {
+  console.log("clean-------")
   del([buildDir], cb);
   cb();
 });
 
 // just makes sure that the build dir exists
-gulp.task('init', gulp.series(['clean']), function(done) {
+gulp.task('init', function(done){
   mkdirp(buildDir, function (err) {
     if (err) console.error(err)
   });
+  console.log("In init!");
   done();
 });
 
+
 // browserify debug
-gulp.task('build-browser', gulp.series('init'), function() {
+gulp.task('build-browser-exec',function(done) {
   var b = browserify({debug: true,hasExports: true});
   exposeBundles(b);
   return b.bundle()
@@ -69,9 +72,8 @@ gulp.task('build-browser', gulp.series('init'), function() {
     .pipe(gulp.dest(buildDir));
 });
 
-// browserify min
-gulp.task('build-browser-min',gulp.series('init'), function() {
-  var b = browserify({hasExports: true, standalone: "biojs-vis-blast"});
+gulp.task('build-browser-min-exec', function() {
+  var b = browserify({hasExports: true, standalone: "biojs-vis-bam", debug:false});
   exposeBundles(b);
   return b.bundle()
     .pipe(source(outputFile + ".min.js"))
@@ -79,6 +81,11 @@ gulp.task('build-browser-min',gulp.series('init'), function() {
     .pipe(streamify(uglify()))
     .pipe(gulp.dest(buildDir));
 });
+
+gulp.task('build-browser', gulp.series(['init', 'build-browser-exec']));
+gulp.task('build-browser-min', gulp.series(['init', 'build-browser-min-exec']));
+
+// browserify min
  
 gulp.task('build-browser-gzip', gulp.series('build-browser-min'), function() {
   return gulp.src(outputFileMin)
