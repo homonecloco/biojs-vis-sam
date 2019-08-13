@@ -35,6 +35,7 @@
     "biojs-io-sam": "^0.2.1",
     "jquery": "^3",
     "jquery-ui": "^1.10.5",
+    "jquery-ui-dist": "^1.10.5",
     "chosen-js": "^1"
   },
   "devDependencies": {
@@ -67,12 +68,16 @@
   ],
   "sniper": {
     "js": [
-      "/build/biojs-vis-sam.js"
+      "/build/biojs-vis-sam.js",
+      "/node_modules/jquery/dist/jquery.js",
+      "/node_modules/jquery-ui-dist/jquery-ui.js"
     ],
     "css": [
       "/css/BAMViewer.css",
       "/css/jquery-ui-1.10.4.custom.min.css",
-      "/css/jquery.tooltip.css"
+      "/css/jquery.tooltip.css",
+      "/node_modules/jquery-ui-dist/jquery-ui.css",
+      "/node_modules/jquery-ui-dist/jquery-ui.theme.css"
     ],
     "snippets": [
       "snippets"

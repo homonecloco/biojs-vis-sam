@@ -20,7 +20,8 @@ window.biojs.io.sam = require("biojs-io-sam");
 //window.biojs.xhr = require("nets");
 
 module.exports = require("./index");
-
+//module.exports = require("jQuery");
+//jQuery = require("jquery")
 //#require('./css/BAMViewer.css');
 //require('./css/jquery-ui-1.10.4.custom.min.css');
 //require('./css/jquery.tooltip.css');

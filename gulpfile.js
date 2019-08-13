@@ -66,7 +66,7 @@ gulp.task('init', function(done){
 gulp.task('build-browser-exec',function(done) {
   var b = browserify({debug: true,hasExports: true});
   exposeBundles(b);
-  return b.bundle()
+  return b.bundle().on('error', console.error)
     .pipe(source(outputFile + ".js"))
     .pipe(chmod(644))
     .pipe(gulp.dest(buildDir));
