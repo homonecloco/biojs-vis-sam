@@ -12,13 +12,14 @@
   <title>Test SAM</title>
 
   <script language="JavaScript" type="text/javascript" src="../build/biojs-vis-sam.js"></script>
-
+<script src="../node_modules/jquery/dist/jquery.js"></script>
+<script src="../node_modules/jquery-ui-dist/jquery-ui.js"></script>
   <script language="JavaScript" type="text/javascript">
 
 
 
   window.onload = function() {
-
+   var sam = require("biojs-vis-sam");
    var bw = 10;
    var flanking_cache = 50;
 
